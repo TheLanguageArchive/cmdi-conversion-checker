@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://www.clarin.eu/cmd/"
+     xmlns:imdi="http://www.mpi.nl/IMDI/Schema/IMDI"
+     xmlns:lat="http://lat.mpi.nl/"
+     xmlns:iso="http://www.iso.org/"
+     xmlns:sil="http://www.sil.org/"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:functx="http://www.functx.com"
+     CMDVersion="1.1"
+     xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1407745712035/xsd">
+   <Header>
+      <MdCreator>Editor - Profile:local/SESSION.Profile.xml</MdCreator>
+      <MdCreationDate>2008-04-13</MdCreationDate>
+      <MdSelfLink>hdl:1839/00-0000-0000-0009-2D42-E</MdSelfLink>
+      <MdProfile>clarin.eu:cr1:p_1407745712035</MdProfile>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+         <ResourceProxy id="d19e277">
+            <ResourceType mimetype="audio/x-wav">Resource</ResourceType>
+            <ResourceRef lat:localURI="../Media/Popoloca_tape_10.1.wav">hdl:1839/00-0000-0000-0009-2D43-5</ResourceRef>
+         </ResourceProxy>
+         <ResourceProxy id="landingpage">
+            <ResourceType>LandingPage</ResourceType>
+            <ResourceRef>hdl:1839/00-0000-0000-0009-2D42-E@view</ResourceRef>
+         </ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <lat-session>
+         <Name>POP. 10.1</Name>
+         <Title>Popoloca tape 10.1</Title>
+         <Date>1975</Date>
+         <descriptions>
+            <Description xml:lang="eng">This tape contains:
+- animal names
+- numerals</Description>
+         </descriptions>
+         <Location>
+            <Continent>North-America</Continent>
+            <Country>Mexico</Country>
+            <Region>Los Reyes Metzontla</Region>
+            <Address>Unspecified</Address>
+         </Location>
+         <Project>
+            <Name>WALC: Popoloca Archival Audio Material</Name>
+            <Title>Web-Publishing and Archiving Language Corpora: Popoloca Archival Audio Material</Title>
+            <Id/>
+            <Contact>
+               <Name>Grazyna J. Rowicka</Name>
+               <Address>Raculty of Arts, Leiden University, P.O. 9515, 2300 RA Leiden</Address>
+               <Email>g.j.rowicka@let.leidenuniv.nl</Email>
+               <Organisation>Leiden University</Organisation>
+            </Contact>
+            <descriptions>
+               <Description xml:lang="eng">The Popolocan languages.
+The Popolocan language family belongs to the Otomanguean phylum and is composed of  Popoloc(a) (± 11,000 speakers), Chocho (± 1,000 speakers), Ixcatec (no more than 10 speakers) and more distantly related Mazatec (± 100,000 speakers) which is not included in the digitalisized recordings. All four languages are spoken in Mexico, in the southern part of the State of Puebla, the northeastern part of the State of Oaxaca and in an adjacent fringe in the State of Veracruz. The increasing use of the Spanish language in the entire region has resulted in a high degree of bilingualism in the Popolocan speech communities. Although the influence from dominating Spanish occurs primarily in the vocabularuy, the morphological and syntactic structures are affected also. 
+
+Popoloc
+The recordings of the Popoloc language were made and analysed by Annette Veerman-Leichsenring during several field work periods from 1980 till 1990 which has resulted in Gramática del popoloca de Metzontla. The village of Los Reyes Metzontla has approximately 800 inhabitants and is located south of Tehuacán, Puebla. Only some older persons still used or had  knowledge of Popoloc in that time. A closely related dialect is spoken in nearby San Juan Atzingo. Other dialects of Popoloc are spoken in San Felipe Otlaltepec, Almalonga, San Antonio Huejonapan, Santa Inés Ahuatempan, San Vicente Coyotepec, Natívitas Cuyautempan, San Marcos Tlacoyalco y San Luis Temalacayuca, all villages located in the State of Puebla.
+
+Some characteristics of the Popolocan languages. 
+The Popolocan languages are tonal, with three or four tones having a lexical and a grammatical function. 
+Four grammatical persons are distinguished; plural is gramatically marked in person forms only.
+The basic word order is historically verb initial (VSO) with the typologically correlated use of prepositions, noun-adjective (but quantifier-noun) and noun-possessor orders, noun followed by relative clause, the auxiliary preceding the verb and the use of a clause initial question marker (Greenberg 1966). When for pragmatic reasons a subject or object argument is placed before the verb, the canonical VSO order is recovered by placing a pronoun that is coreferential with the preverbal noun phrase after the verb word.
+However, due to the influence of Spanish, a SVO order of constituents is often used now without the use of coreferentials.
+
+Historical importance
+The historical importance of the Popolocan region became particularly evident after the multidisciplinary study directed by Richard MacNeish, which showed that the Valley of Tehuacán, the apparent homeland of the Proto-Popolocans, was populated about 6500 b.C already and that it is possibly one of the first places in Mesomaeirca where corn was cultivated (MacNeish 1972). Later in the postclassic period (900-1500 a.D) this central Mexican area had an important culture spreading role. It is presumed that the ceramic Mixteca-Puebla style developed just here. The possibility that the Codex Borgia was painted in the same area, has been suggested by several archeologists, among them Nicholson and Quiñones Keber (1994). Excavations in the Valley of Tehuacán (Sisson and Lilly 1994) seem to affirm this hypothesis.</Description>
+            </descriptions>
+         </Project>
+         <Content>
+            <Genre>Discourse</Genre>
+            <SubGenre>Unspecified</SubGenre>
+            <Task/>
+            <Modalities>speech</Modalities>
+            <Subject>animal names,  numerals</Subject>
+            <CommunicationContext>
+               <Interactivity>interactive</Interactivity>
+               <PlanningType>Unspecified</PlanningType>
+               <Involvement>elicited</Involvement>
+               <SocialContext>Unspecified</SocialContext>
+               <EventStructure>Unspecified</EventStructure>
+               <Channel>Unspecified</Channel>
+            </CommunicationContext>
+            <Content_Languages>
+               <Content_Language>
+                  <Id>RFC1766:x-sil-PLO</Id>
+                  <Name>Popoloca</Name>
+                  <Dominant>Unspecified</Dominant>
+                  <SourceLanguage>Unspecified</SourceLanguage>
+                  <TargetLanguage>Unspecified</TargetLanguage>
+               </Content_Language>
+               <Content_Language>
+                  <Id>RFC1766:x-sil-SPN</Id>
+                  <Name>Spanish</Name>
+                  <Dominant>Unspecified</Dominant>
+                  <SourceLanguage>Unspecified</SourceLanguage>
+                  <TargetLanguage>Unspecified</TargetLanguage>
+               </Content_Language>
+            </Content_Languages>
+         </Content>
+         <Actors>
+            <Actor>
+               <Role>Consultant</Role>
+               <Name>Emiliano Hernandéz</Name>
+               <FullName/>
+               <Code/>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>70</Age>
+               <BirthDate>Unspecified</BirthDate>
+               <Sex>Male</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact/>
+               <Actor_Languages/>
+            </Actor>
+            <Actor>
+               <Role>Researcher</Role>
+               <Name>Anette Veerman-Leichsenring</Name>
+               <FullName/>
+               <Code/>
+               <FamilySocialRole>Unspecified</FamilySocialRole>
+               <EthnicGroup/>
+               <Age>21/22</Age>
+               <BirthDate>1953-05-03</BirthDate>
+               <Sex>Female</Sex>
+               <Education>Unspecified</Education>
+               <Anonymized>Unspecified</Anonymized>
+               <Contact/>
+               <Actor_Languages/>
+            </Actor>
+         </Actors>
+         <Resources>
+            <MediaFile ref="d19e277">
+               <Type>audio</Type>
+               <Format>audio/x-wav</Format>
+               <Size/>
+               <Quality>Unspecified</Quality>
+               <RecordingConditions/>
+               <TimePosition>
+                  <Start>Unspecified</Start>
+                  <End>Unspecified</End>
+               </TimePosition>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </MediaFile>
+            <Anonyms>
+               <Access>
+                  <Availability/>
+                  <Date>Unspecified</Date>
+                  <Owner/>
+                  <Publisher/>
+                  <Contact/>
+               </Access>
+            </Anonyms>
+         </Resources>
+         <References>
+            <descriptions>
+               <Description xml:lang="eng">References
+Greenberg, Joseph H., 1966. Some universals of grammar with particular reference to the 
+order of meaningful elements. In J.H. Greenberg (ed.) Universals of language, 2nd 
+edition. Cambridge, Mass./London: MIT Press.
+MacNeish, Richard S. (General editor), 1972. The prehistory of the Tehuacan Valley, 
+5 volumes. Austin/Londen, University of Texas Press.
+Nicholson, H.B. and Eloise Quiñones Keber, 1994. Mixtecca-Puebla, Discoveries and
+Research in Mesoamerican Art and Archeology. Culver City, California: Labyrinthos.
+Sisson, Edward B. and T. Gerald Lilly, 1994. ‘A Codex-style mural from Tehuacán Viejo,
+Puebla México’. Ancient Mesoamerica, 5:33-44. 
+Veerman-Leichsenring, Annette, 1991. Gramática del popoloca de Metzontla (con 
+vocabulario y textos). Amsterdam/Atlanta: Rodopi.
+Veerman-Leichsenring,Annette, 2000. Gramática del chocho de Santa Catarina Ocotlán, 
+Oaxaca. Leiden: Research School of Asian, African and Amerindian Studies (CNWS)/ 
+Mexico: Universidad Nacional Autónoma de México. 
+Veerman-Leichsenring, Annette. 2001. Ixcateco: la frase nominal. Anales de Antropología, 
+vol 35, Mexico: Universidad Nacional Autónoma de México.</Description>
+            </descriptions>
+         </References>
+      </lat-session>
+   </Components>
+</CMD>
