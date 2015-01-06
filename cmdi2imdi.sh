@@ -15,7 +15,8 @@ else
 		TARGET_DIR=${OUTPUT_DIR}/${DIRNAME}
 		mkdir -p $TARGET_DIR
 
-		TARGET=${TARGET_DIR}/${FILENAME}.imdi
+		TARGET_FILE=`echo ${FILENAME}|sed -e 's/\.cmdi$/.imdi/g'`
+		TARGET=${TARGET_DIR}/${TARGET_FILE}
 
 		echo $FILENAME "->" $TARGET
 		java -cp ${SAXON_JAR} net.sf.saxon.Transform ${IN_FILE} ${STYLESHEET} > ${TARGET}
