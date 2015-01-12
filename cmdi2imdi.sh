@@ -15,7 +15,8 @@
 # 
 
 # Location of Saxon-HE 9 JAR
-export SAXON_JAR=~/.m2/repository/net/sf/saxon/Saxon-HE/9.5.1-8/Saxon-HE-9.5.1-8.jar
+export SAXON_JAR_URL=http://lux15.mpi.nl/nexus/service/local/repositories/central/content/net/sf/saxon/Saxon-HE/9.5.1-8/Saxon-HE-9.5.1-8.jar
+export SAXON_JAR=/tmp/saxon.jar
 
 # Location of cmdi2imdi stylesheet
 export STYLESHEET_URL=https://github.com/TheLanguageArchive/MetadataTranslator.git
@@ -46,6 +47,13 @@ export -f convert_to_imdi
 # Get latest stylesheet
 echo Retrieving CMDI2IMDI stylesheet...
 git clone ${STYLESHEET_URL} ${STYLESHEET_DIR}
+
+#Get saxon
+if [ ! -f $SAXON_JAR ]
+then
+	echo Retrieving saxon
+	wget -q -O ${SAXON_JAR} ${SAXON_JAR_URL}
+fi
 
 # Run conversion
 if [ -d "$OUTPUT_DIR" ]
