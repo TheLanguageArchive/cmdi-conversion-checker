@@ -39,26 +39,26 @@ function convert_to_imdi {
 	TARGET_FILE=`echo ${FILENAME}|sed -e 's/\.cmdi$/.imdi/g'`
 	TARGET=${TARGET_DIR}/${TARGET_FILE}
 
-	echo $FILENAME "->" $TARGET
+	echo $FILENAME "->" $TARGET > /dev/stderr
 	java -cp ${SAXON_JAR} net.sf.saxon.Transform ${IN_FILE} ${STYLESHEET} > ${TARGET}
 }
 export -f convert_to_imdi
 
 # Get latest stylesheet
-echo Retrieving CMDI2IMDI stylesheet...
+echo Retrieving CMDI2IMDI stylesheet... > /dev/stderr
 git clone ${STYLESHEET_URL} ${STYLESHEET_DIR}
 
 #Get saxon
 if [ ! -f $SAXON_JAR ]
 then
-	echo Retrieving saxon
+	echo Retrieving saxon > /dev/stderr
 	wget -q -O ${SAXON_JAR} ${SAXON_JAR_URL}
 fi
 
 # Run conversion
 if [ -d "$OUTPUT_DIR" ]
 then
-	echo Output directory \"${OUTPUT_DIR}\" already exists
+	echo Output directory \"${OUTPUT_DIR}\" already exists > /dev/stderr
 else
 	find $@ -name "*.cmdi" -exec bash -c "convert_to_imdi {}" \;
 fi

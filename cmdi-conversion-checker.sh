@@ -26,28 +26,43 @@ IMDI_OUTPUT_DIR=$DIR/imdi-out
 ORIGINAL_IMDI_DIR=$1
 CONVERTED_CMDI_DIR=$2
 
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <original-imdi-dir> <converted-cmdi-dir>" > /dev/stderr
+    exit 1
+fi
+
+if [ ! -d "$ORIGINAL_IMDI_DIR" ]; then
+	echo The directory \""$ORIGINAL_IMDI_DIR"\" does not exist > /dev/stderr
+	exit 2
+fi
+
+if [ ! -d "$CONVERTED_CMDI_DIR" ]; then
+	echo The directory \""$CONVERTED_CMDI_DIR"\" does not exist > /dev/stderr
+	exit 3
+fi
+
 # ok to remove old output directory? 
 if [ -d "$IMDI_OUTPUT_DIR" ]
 then
 	read -p "\"${IMDI_OUTPUT_DIR}\" already exists, ok to remove? (y/n)" -n 1 -r
-	echo ""
+	echo "" > /dev/stderr
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
-		echo "Removing $IMDI_OUTPUT_DIR..."
+		echo "Removing $IMDI_OUTPUT_DIR..." > /dev/stderr
     	rm -rf $IMDI_OUTPUT_DIR
     else 
-    	exit 1
+    	exit 5
 	fi
 fi
 
 # convert cmdi to imdi
-echo ---------------------------------
-echo Converting CMDI output to IMDI...
-echo ---------------------------------
+echo --------------------------------- > /dev/stderr
+echo Converting CMDI output to IMDI... > /dev/stderr
+echo --------------------------------- > /dev/stderr
 bash ${CMDI2IMDI} ${CONVERTED_CMDI_DIR}
 
 # run checker
-echo ------------------
-echo Performing diff...
-echo ------------------
+echo ------------------ > /dev/stderr
+echo Performing diff... > /dev/stderr
+echo ------------------ > /dev/stderr
 java -jar ${IMDI_DIFF_JAR} ${ORIGINAL_IMDI_DIR} ${IMDI_OUTPUT_DIR}/${CONVERTED_CMDI_DIR}
