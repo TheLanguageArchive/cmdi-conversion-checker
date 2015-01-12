@@ -41,6 +41,12 @@ if [ ! -d "$CONVERTED_CMDI_DIR" ]; then
 	exit 3
 fi
 
+if [ ! -f "$IMDI_DIFF_JAR" ]; then
+	echo The JAR file for the ImdiDiff tool could not be found at the specified location: \
+			$IMDI_DIFF_JAR > /dev/stderr
+	exit 4
+fi
+
 # ok to remove old output directory? 
 if [ -d "$IMDI_OUTPUT_DIR" ]
 then
