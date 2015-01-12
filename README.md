@@ -9,6 +9,8 @@ Parameters:
 1. Location of directory with original IMDIs
 2. Location of CMDIs derived from this IMDI (same directory structure assumed)
 
+The diff output goes to _stdout_, everything else to _stderr_.
+
 Usage: `./cmdi-conversion-checker.sh original-imdi-dir converted-cmdi-dir`
 
 **Important**: set the `IMDI_DIFF_JAR` parameter to point to the ImdiDiff jar (with dependencies) in the `cmdi-conversion-checker.sh` source file.
