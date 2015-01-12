@@ -65,4 +65,6 @@ bash ${CMDI2IMDI} ${CONVERTED_CMDI_DIR}
 echo ------------------ > /dev/stderr
 echo Performing diff... > /dev/stderr
 echo ------------------ > /dev/stderr
-java -jar ${IMDI_DIFF_JAR} ${ORIGINAL_IMDI_DIR} ${IMDI_OUTPUT_DIR}/${CONVERTED_CMDI_DIR}
+java -Dorg.slf4j.simpleLogger.logFile=System.out \
+	 -jar ${IMDI_DIFF_JAR} \
+	 	${ORIGINAL_IMDI_DIR} ${IMDI_OUTPUT_DIR}/${CONVERTED_CMDI_DIR}
