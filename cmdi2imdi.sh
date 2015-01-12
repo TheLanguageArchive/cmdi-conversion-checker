@@ -60,7 +60,14 @@ if [ -d "$OUTPUT_DIR" ]
 then
 	echo Output directory \"${OUTPUT_DIR}\" already exists > /dev/stderr
 else
-	find $@ -name "*.cmdi" -exec bash -c "convert_to_imdi {}" \;
+	echo Transforming into $OUTPUT_DIR > /dev/stderr
+	for DIR in `find $@ -type d`; do
+		TARGET_DIR=${OUTPUT_DIR}/${DIR}
+		echo Converting $DIR to $TARGET_DIR > /dev/stderr
+		mkdir -p $TARGET_DIR
+		java -cp ${SAXON_JAR} net.sf.saxon.Transform -s:${DIR} -xsl:${STYLESHEET} -o:${TARGET_DIR}
+		rename -s .cmdi.xml .imdi ${TARGET_DIR}/*
+	done
 fi
 
 echo Removing CMDI2IMDI stylesheet... > /dev/stderr
