@@ -62,3 +62,7 @@ then
 else
 	find $@ -name "*.cmdi" -exec bash -c "convert_to_imdi {}" \;
 fi
+
+echo Removing CMDI2IMDI stylesheet... > /dev/stderr
+rm -rf ${STYLESHEET_DIR}
+
