@@ -10,3 +10,5 @@ Parameters:
 2. Location of CMDIs derived from this IMDI (same directory structure assumed)
 
 Usage: `./cmdi-conversion-checker.sh original-imdi-dir converted-cmdi-dir`
+
+**Important**: set the `IMDI_DIFF_JAR` parameter to point to the ImdiDiff jar (with dependencies) in the `cmdi-conversion-checker.sh` source file.
