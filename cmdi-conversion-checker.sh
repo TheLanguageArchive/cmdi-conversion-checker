@@ -19,6 +19,13 @@
 # (obtain and build from <https://github.com/TheLanguageArchive/ImdiDiff> if needed)
 IMDI_DIFF_JAR=~/git/ImdiDiff/target/ImdiDiff-1.0-SNAPSHOT-jar-with-dependencies.jar
 
+# Location of cmdi2imdi stylesheet
+STYLESHEET_URL=https://github.com/TheLanguageArchive/MetadataTranslator.git
+
+# CMDI-IMDI stylesheet clone location
+STYLESHEET_DIR=/tmp/cmdi2imdi-`date +"%s"`
+STYLESHEET=${STYLESHEET_DIR}/Translator/src/main/resources/templates/cmdi2imdi/cmdi2imdiMaster.xslt
+
 DIR=$(dirname ${BASH_SOURCE})
 CMDI2IMDI=${DIR}/cmdi2imdi.sh
 IMDI_OUTPUT_DIR=$DIR/imdi-out
@@ -61,16 +68,27 @@ then
 	fi
 fi
 
+# Get latest stylesheet
+echo ---------------------------------- > /dev/stderr
+echo Retrieving CMDI2IMDI stylesheet... > /dev/stderr
+echo ---------------------------------- > /dev/stderr
+git clone ${STYLESHEET_URL} ${STYLESHEET_DIR}
+
 # convert cmdi to imdi
 echo --------------------------------- > /dev/stderr
 echo Converting CMDI output to IMDI... > /dev/stderr
 echo --------------------------------- > /dev/stderr
-bash ${CMDI2IMDI} ${CONVERTED_CMDI_DIR}
+
+java -Dorg.slf4j.simpleLogger.logFile=System.err \
+	 -cp ${IMDI_DIFF_JAR} \
+	 nl.mpi.imdidiff.util.RecursiveTransformer \
+	 	"${STYLESHEET}" "${CONVERTED_CMDI_DIR}" "${IMDI_OUTPUT_DIR}" .cmdi .imdi
 
 # run checker
 echo ------------------ > /dev/stderr
 echo Performing diff... > /dev/stderr
 echo ------------------ > /dev/stderr
+echo Outputting to stdout... > /dev/stderr
 java -Dorg.slf4j.simpleLogger.logFile=System.out \
 	 -jar ${IMDI_DIFF_JAR} \
-	 	${ORIGINAL_IMDI_DIR} ${IMDI_OUTPUT_DIR}/${CONVERTED_CMDI_DIR}
+	 	${ORIGINAL_IMDI_DIR} ${IMDI_OUTPUT_DIR}
