@@ -21,6 +21,7 @@ IMDI_DIFF_JAR=~/git/ImdiDiff/target/ImdiDiff-1.0-SNAPSHOT-jar-with-dependencies.
 
 # Location of cmdi2imdi stylesheet
 STYLESHEET_URL=https://github.com/TheLanguageArchive/MetadataTranslator.git
+STYLESHEET_BRANCH=master
 
 # CMDI-IMDI stylesheet clone location
 STYLESHEET_DIR=/tmp/cmdi2imdi-`date +"%s"`
@@ -72,7 +73,12 @@ fi
 echo ---------------------------------- > /dev/stderr
 echo Retrieving CMDI2IMDI stylesheet... > /dev/stderr
 echo ---------------------------------- > /dev/stderr
+
 git clone ${STYLESHEET_URL} ${STYLESHEET_DIR}
+pushd .
+cd ${STYLESHEET_DIR}
+git checkout ${STYLESHEET_BRANCH}
+popd
 
 # convert cmdi to imdi
 echo --------------------------------- > /dev/stderr
