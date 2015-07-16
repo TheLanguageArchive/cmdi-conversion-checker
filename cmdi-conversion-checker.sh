@@ -33,9 +33,10 @@ IMDI_OUTPUT_DIR=$DIR/imdi-out
 
 ORIGINAL_IMDI_DIR=$1
 CONVERTED_CMDI_DIR=$2
+EXCLUDE_FILE=$3 #optional
 
-if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <original-imdi-dir> <converted-cmdi-dir>" > /dev/stderr
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 <original-imdi-dir> <converted-cmdi-dir> [<exclude-list-file>]" > /dev/stderr
     exit 1
 fi
 
@@ -97,4 +98,4 @@ echo ------------------ > /dev/stderr
 echo Outputting to stdout... > /dev/stderr
 java -Dorg.slf4j.simpleLogger.logFile=System.out \
 	 -jar ${IMDI_DIFF_JAR} \
-	 	${ORIGINAL_IMDI_DIR} ${IMDI_OUTPUT_DIR}
+	 	${ORIGINAL_IMDI_DIR} ${IMDI_OUTPUT_DIR} ${EXCLUDE_FILE}
